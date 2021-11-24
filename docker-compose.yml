@@ -1,0 +1,14 @@
+version: 'version'
+services:
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+  db:
+    image: "mssql"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - db-data:/foo
+volumes:
+  db-data:
