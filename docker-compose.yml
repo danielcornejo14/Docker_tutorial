@@ -5,10 +5,9 @@ services:
     ports:
       - "8080:8080"
   db:
-    image: "mssql"
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
     environment:
-      MYSQL_ROOT_PASSWORD: password
-    volumes:
-      - db-data:/foo
-volumes:
-  db-data:
+      SA_PASSWORD: "Corne01214!"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
